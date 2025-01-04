@@ -1,11 +1,37 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<section class="w-full lg:w-[740px] mx-auto  py-44">
+			<img 
+				src="https://e7.pngegg.com/pngimages/410/329/png-clipart-computer-icons-github-instructure-con-2018-icon-design-desktop-github-white-mammal-thumbnail.png" 
+				class="rounded-full w-12 h-12 mb-4" 
+				alt="me"
+			/>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+				Hey, i'm Santiago
+				<a 
+					href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/" 
+					target="_blank" rel="noopener" 
+					class="flex justify-center items-center"
+				>
+					<Badge>Open to work</Badge>
+				</a>
+			</h1>
+			<h2 class="text-2xl opacity-80">
+				+2 years experience, Software Developer and DevOps. 
+				From Colombia 🇨🇴, especialized in create a quality solutions.
+			</h2>
+			<ul>
+
+			</ul>
+		</section>
+	</main>
 </Layout>
