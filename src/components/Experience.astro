@@ -1,0 +1,37 @@
+---
+import { date } from "astro:schema"
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'December 2024',
+        title: "Particiapnt DevOps Engineer",
+        description: "I was part of a DevOps team that was resposible for multiple prjects and services in diferent environments and clients.",
+        company: "Ceiba Software",
+        link: "#",
+    },
+    {
+        date: 'June 2024',
+        title: "Back-end Developer",
+        description: "Golang back-end developer for a project that was responsible for managing and processing data from multiple sources.",
+        company: "Freelance - Remote"
+    },
+    {
+        date: 'December 2023',
+        title: "Teaching Assistant",
+        description: "I was a teaching assistant for a sotware development engineer at UV (Universidad del Valle), where I helped students with their projects and assignments.",
+        company: "Universidad del Valle"
+    },
+
+]
+---
+
+<ol class="relative border-l border-gray-200 ml-3 dark:border-gray-700">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
