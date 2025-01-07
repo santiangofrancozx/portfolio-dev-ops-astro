@@ -17,7 +17,10 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro";
 import ContactForm from "../components/ContactForm.astro";
 ---
 
-<Layout title="Santiago Franco | Back-End | DevOps" description="Santiago Franco personal website portfolio">
+<Layout
+	title="Santiago Franco | Back-End | DevOps"
+	description="Santiago Franco personal website portfolio"
+>
 	<main class="px-4">
 		<SectionContainer class="py-16 md:py-36">
 			<img
@@ -43,7 +46,9 @@ import ContactForm from "../components/ContactForm.astro";
 				<span class="text-sky-800/100 dark:text-yellow-200/90">
 					Software Developer and DevOps Engineer.
 				</span>
-				<span class="text-orange-400 dark:text-red-200/90"> From Colombia 🇨🇴. </span>
+				<span class="text-orange-400 dark:text-red-200/90">
+					From Colombia 🇨🇴.
+				</span>
 				<span class="opacity-80">
 					Especialized creating a quality software solutions and
 					automated process.
@@ -68,28 +73,27 @@ import ContactForm from "../components/ContactForm.astro";
 		</SectionContainer>
 		<SectionContainer id="experience">
 			<h2
-				class="text-3xl font-semibold mb-6 text-white mb- flex gap-x-2 gap-y-4 items-center"
+				class="text-3xl font-semibold mb-6 dark:text-white text-black mb- flex gap-x-2 gap-y-4 items-center"
 			>
 				<Suitcase class="size-8" />
 				Work experience
-				<h2></h2>
-				<Experience />
 			</h2>
-			<SectionContainer id="projects">
-				<TitleSection>
-					<CodeIcon class="size-7" />
-					Projects
-				</TitleSection>
-				<Projects />
-			</SectionContainer>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<TitleSection>
+				<CodeIcon class="size-7" />
+				Projects
+			</TitleSection>
+			<Projects />
+		</SectionContainer>
 
-			<SectionContainer id="about-me" class="py-16">
-				<TitleSection>
-					<ProfileCheck class="size-8" />
-					About me
-				</TitleSection>
-				<AboutMe />
-			</SectionContainer>
+		<SectionContainer id="about-me" class="py-16">
+			<TitleSection>
+				<ProfileCheck class="size-8" />
+				About me
+			</TitleSection>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 </Layout>
