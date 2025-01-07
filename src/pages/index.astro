@@ -2,20 +2,22 @@
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
-import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import SocialContainer from "../components/SocialContainer.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
-import MailIcon from "../components/icons/Mail.astro"
+import MailIcon from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Suitcase from "../components/icons/Suitcase.astro";
 import CodeIcon from "../components/icons/Code.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import TitleSection from "../components/TitleSection.astro";
+import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
-<Layout>
+<Layout title="Santiago Franco | Back-End | DevOps" description="Santiago Franco personal website portfolio">
 	<main class="px-4">
 		<SectionContainer class="py-16 md:py-36">
 			<img
@@ -24,7 +26,7 @@ import CodeIcon from "../components/icons/Code.astro";
 				alt="me"
 			/>
 			<h1
-				class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-balance"
+				class="text-black dark:text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-balance"
 			>
 				Hey, i'm Santiago
 				<a
@@ -37,43 +39,57 @@ import CodeIcon from "../components/icons/Code.astro";
 				</a>
 			</h1>
 			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[600px]">
-				<span> +1 year experience. </span>
-				<span class="text-yellow-200/90">
-					Software Developer and Participant DevOps Engineer.
+				<span>An experienced. </span>
+				<span class="text-sky-800/100 dark:text-yellow-200/90">
+					Software Developer and DevOps Engineer.
 				</span>
-				<span class="text-red-200/90"> From Colombia 🇨🇴. </span>
+				<span class="text-orange-400 dark:text-red-200/90"> From Colombia 🇨🇴. </span>
 				<span class="opacity-80">
 					Especialized creating a quality software solutions and
 					automated process.
 				</span>
 			</h2>
 			<nav class="flex flex-wrap gap-4 mt-8">
-				<SocialContainer href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/">
-					<LinkedInIcon class="size-4 md:size-6"/>
-						LinkedIn
+				<SocialContainer
+					href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/"
+				>
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
 				</SocialContainer>
 				<SocialContainer href="https://github.com/santiangofrancozx">
-					<GitHubIcon class="size-4 md:size-6"/>
-						GitHub
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
 				</SocialContainer>
 				<SocialContainer href="mailto:santiagofrancozx@gmail.com">
-					<MailIcon class="size-4 md:size-6"/>
-						santiagofrancozx@gmail.com
+					<MailIcon class="size-4 md:size-6" />
+					santiagofrancozx@gmail.com
 				</SocialContainer>
 			</nav>
 		</SectionContainer>
 		<SectionContainer id="experience">
-			<h2 class="text-3xl font-semibold mb-6 text-white mb- flex gap-x-2 gap-y-4 items-center">
-				<Suitcase class="size-8"/>
+			<h2
+				class="text-3xl font-semibold mb-6 text-white mb- flex gap-x-2 gap-y-4 items-center"
+			>
+				<Suitcase class="size-8" />
 				Work experience
-			<h2/>
-			<Experience/>
-		</SectionContainer>
-		<SectionContainer id="projects">
-			<h2 class="text-3xl font-semibold mb-6 text-white mb- flex gap-x-2 gap-y-4 items-center">
-				<CodeIcon class="size-8"/>
-				Projects
-			<h2/>
+				<h2></h2>
+				<Experience />
+			</h2>
+			<SectionContainer id="projects">
+				<TitleSection>
+					<CodeIcon class="size-7" />
+					Projects
+				</TitleSection>
+				<Projects />
+			</SectionContainer>
+
+			<SectionContainer id="about-me" class="py-16">
+				<TitleSection>
+					<ProfileCheck class="size-8" />
+					About me
+				</TitleSection>
+				<AboutMe />
+			</SectionContainer>
 		</SectionContainer>
 	</main>
 </Layout>
