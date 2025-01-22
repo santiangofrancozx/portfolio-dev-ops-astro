@@ -15,6 +15,9 @@ import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 import ProfileCheck from "../components/icons/ProfileCheck.astro";
 import ContactForm from "../components/ContactForm.astro";
+import Hero from "../components/Hero.astro";
+import PopUp from "../components/PopUp.astro";
+import Modal from "../components/Modal.astro";
 ---
 
 <Layout
@@ -23,53 +26,7 @@ import ContactForm from "../components/ContactForm.astro";
 >
 	<main class="px-4">
 		<SectionContainer class="py-16 md:py-36">
-			<img
-				src="https://e7.pngegg.com/pngimages/410/329/png-clipart-computer-icons-github-instructure-con-2018-icon-design-desktop-github-white-mammal-thumbnail.png"
-				class="rounded-full w-12 h-12 mb-4"
-				alt="me"
-			/>
-			<h1
-				class="text-black dark:text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-balance"
-			>
-				Hey, I'm Santiago
-				<a
-					href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/"
-					target="_blank"
-					rel="noopener"
-					class="flex items-center transition md:justify-center md:hover:scale-105"
-				>
-					<Badge>Open to work</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[600px]">
-				<span>An experienced. </span>
-				<span class="text-sky-800/100 dark:text-yellow-200/90">
-					Software Developer and DevOps Engineer.
-				</span>
-				<span class="text-orange-400 dark:text-red-200/90">
-					From Colombia 🇨🇴.
-				</span>
-				<span class="opacity-80">
-					Especialized creating a quality software solutions and
-					automated process.
-				</span>
-			</h2>
-			<nav class="flex flex-wrap gap-4 mt-8">
-				<SocialContainer
-					href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/"
-				>
-					<LinkedInIcon class="size-4 md:size-6" />
-					LinkedIn
-				</SocialContainer>
-				<SocialContainer href="https://github.com/santiangofrancozx">
-					<GitHubIcon class="size-4 md:size-6" />
-					GitHub
-				</SocialContainer>
-				<SocialContainer href="mailto:santiagofrancozx@gmail.com">
-					<MailIcon class="size-4 md:size-6" />
-					santiagofrancozx@gmail.com
-				</SocialContainer>
-			</nav>
+			<Hero />
 		</SectionContainer>
 		<SectionContainer id="experience">
 			<h2
@@ -86,8 +43,8 @@ import ContactForm from "../components/ContactForm.astro";
 				Projects
 			</TitleSection>
 			<Projects />
+			<PopUp />
 		</SectionContainer>
-
 		<SectionContainer id="about-me" class="py-16">
 			<TitleSection>
 				<ProfileCheck class="size-8" />

@@ -1,0 +1,100 @@
+---
+import LinkInline from "./LinkInline.astro";
+
+const { title, descriptionExtended, date, company, link, toggle, id } = Astro.props;
+---
+
+<!-- Modal toggle -->
+<a
+  data-modal-target="default-modal"
+  data-modal-toggle="default-modal"
+  class="cursor-pointer ... js-show-modal inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700"
+  role="link"
+  type="link"
+  id={id+"trigger"}
+>
+  {toggle}
+</a>
+<div
+  id={id}
+  tabindex="-1"
+  aria-hidden="true"
+  class="hidden fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50"
+>
+  <div
+    class="relative w-full max-w-2xl p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800"
+  >
+    <!-- Modal header -->
+    <div class="flex items-center justify-between border-b pb-4 mb-4">
+      <div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          {title}
+        </h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          <strong>{company}</strong> • {date}
+        </p>
+      </div>
+      <button
+        type="button"
+        class="text-gray-400 hover:text-red-600 ... js-hide-modal dark:hover:text-red-500 transition-colors duration-200"
+        data-modal-hide="default-modal"
+      >
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="space-y-6">
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        {
+          descriptionExtended?.map((desc: string) => (
+            <ul
+              class="space-y-1 text-gray-500 list-disc dark:text-gray-400"
+            >
+              <li>{desc}</li>
+            </ul>
+          ))
+        }
+      </p>
+      {
+        link && (
+          <div class="flex items-center">
+            <LinkInline
+              href={link}
+              class="text-yellow-500 font-medium hover:underline dark:text-yellow-300"
+            >
+              <svg
+                class="w-5 h-5 inline-block mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+              Read more
+            </LinkInline>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+---
+const personalImageAlt = "Santiago Franco"
+import Badge from "./Badge.astro"
+import GitHub from "./icons/GitHub.astro"
+import LinkedInIcon from "./icons/LinkedIn.astro"
+import MailIcon from "./icons/Mail.astro"
+import SocialPill from "./SocialContainer.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/memoji.png"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Open to work</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, I'm Santiago
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <strong
+      >Software Developer and DevOps Engineer.</strong
+    > Specialized in creating quality software solutions
+    and automated processes. <span class="text-orange-400 dark:text-red-200/90">
+        From Colombia 🇨🇴.
+    </span>
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:santiagofrancozx@gmail.com">
+      <MailIcon class="size-4" />
+      Contact
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/santiago-franco-de-la-rosa-b657941b0/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/santiangofrancozx">
+        <GitHub class="size-4"/>
+        GitHub
+    </SocialPill>
+  </nav>
+</div>

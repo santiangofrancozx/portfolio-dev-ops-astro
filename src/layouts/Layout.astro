@@ -22,12 +22,20 @@ const { description, title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="../scripts/modal.js"></script>
     <ViewTransitions />
   </head>
 
   <body class="relative text-black dark:text-white">
     <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div> -->
-    <div class="fixed inset-0 z-[-2] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] dark:bg-[size:20px_20px]"></div>
+    <div
+      class="fixed inset-0 z-[-2] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] dark:bg-[size:20px_20px]"
+    >
     </div>
 
     <Header />

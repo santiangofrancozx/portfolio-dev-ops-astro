@@ -1,37 +1,67 @@
 ---
-import { date } from "astro:schema"
-import ExperienceItem from "./ExperienceItem.astro"
+import { date } from "astro:schema";
+import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
     {
-        date: 'December 2024',
+        id: "1", // Identificador único
+        date: "August 2024 - December 2024",
         title: "DevOps Engineer",
-        description: "I was part of a DevOps team that was resposible for multiple prjects and services in diferent environments and clients.",
-        company: "Ceiba Software",
+        description:
+            "As a DevOps Engineer at Ceiba Software, I worked in Continuous Integration and Continuous Delivery (CI/CD) areas, performing multiple tasks to optimize development and deployment processes. This role combined software development and DevOps practices, enabling me to deliver high-quality, automated solutions aligned with client objectives in a dynamic and collaborative environment.",
+        descriptionExtended: [
+            "Designed, implemented, and maintained CI/CD pipelines for multiple projects and clients using Azure DevOps, Jenkins, and GitHub Actions.",
+            "Automated various tasks with Python, JavaScript, and tools like Pip, npm, Gradle, and Maven.",
+            "Managed Git repositories and implemented efficient branching strategies.",
+            "Contributed to Java and Spring Boot development, creating REST APIs for DevOps metrics.",
+            "Developed and executed comprehensive testing strategies (unit, functional, nonfunctional), optimizing execution times.",
+            "Successfully optimized report generation processes, reducing execution time by 85% through custom Python library development.",
+        ],
+        company: "Ceiba Software - Remote",
         link: "https://www.ceiba.com.co/nuestras-soluciones/consultoria-devops/",
     },
     {
-        date: 'June 2024',
+        id: "2", // Identificador único
+        date: "March 2024 - June 2024",
         title: "Back-end Developer",
-        description: "Golang back-end developer for a project that was responsible for managing and processing data from multiple sources.",
-        company: "Freelance - Remote"
+        description:
+            "As a freelance back-end developer, I worked primarily with a client in the banking sector, contributing to the development of a robust RESTful API using Go (Golang). The project leveraged modern technologies and methodologies to deliver scalable, efficient, and maintainable solutions. This experience enhanced my expertise in Go, modern API design, and implementing scalable architectures in high-demand environments. It also strengthened my ability to deliver tailored solutions for enterprise clients in the financial sector.",
+        descriptionExtended: [
+            "Backend Development: Developed a scalable backend system using Golang and Fiber for a leading financial institution. Implemented a robust data collection and analysis pipeline to create detailed user profiles. Employed hexagonal architecture and Scrum methodology for efficient development.",
+            "API Development: Designed and developed RESTful APIs for secure data exchange. Implemented JWT authentication for secure session management.",
+            "Data Modeling: Created relational database models using MySQL to store and manage user data.",
+        ],
+        company: "Freelance - Remote",
     },
     {
-        date: 'December 2023',
+        id: "3", // Identificador único
+        date: "January 2023 - December 2023",
         title: "Teaching Assistant",
-        description: "I was a teaching assistant for a sotware development engineer at UV (Universidad del Valle), where I helped students with their projects and assignments.",
-        company: "Universidad del Valle"
+        description:
+            "As a Teaching Assistant, I supported and monitored a group of students in Software Development and Electronics, ensuring they received guidance on challenging topics. My responsibilities included delivering support classes tailored to their specific learning needs, helping students improve their understanding of foundational and advanced concepts. This role allowed me to refine my technical expertise, communication skills, and ability to adapt teaching methods to different learning styles, making a meaningful impact on students academic journeys.",
+        descriptionExtended: [
+            "Tutoring and Mentorship: Increased student average grades in data structures courses by 20% through personalized tutoring and hands-on workshops.",
+            "Curriculum Development: Identified a curriculum gap and proposed and implemented a specialized programming support lab, achieving 90% capacity enrollment.",
+            "Innovative Teaching: Taught elective programming courses, empowering students to acquire practical skills in cutting-edge technologies like cloud computing (AWS), full-stack web development (Node.js, React), and data science (Python, Pandas, Streamlit).",
+            "Leadership: Led a team of 5 students in creating and managing the programming support lab, fostering a collaborative learning environment and efficiently resolving technical issues.",
+        ],
+        company: "Universidad del Valle - Buga Colombia",
     },
-
-]
+];
 ---
 
 <ol class="relative border-l border-gray-200 ml-3 dark:border-gray-700">
     {
-        EXPERIENCE.map((experience) => (
-            <li class="mb-10 ms-4">
-                <ExperienceItem {...experience} />
-            </li>
+        EXPERIENCE.map((item) => (
+            <ExperienceItem
+                id={item.id}
+                title={item.title}
+                company={item.company}
+                description={item.description}
+                link={item.link}
+                date={item.date}
+                descriptionExtended={item.descriptionExtended}
+            />
         ))
     }
 </ol>
